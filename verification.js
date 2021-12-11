@@ -1,4 +1,10 @@
 function verification() {
+  var marks = 1 * (document.getElementById("marks").value);
+  ++marks;
+  if(marks == 9) {
+    return wining(marks);
+  }
+  document.getElementById("marks").value = marks;
   var firstDiagonalSum = 0;
   var secondDiagonalSum  = 0;
   for(var i = 1; i < 4; ++i) {

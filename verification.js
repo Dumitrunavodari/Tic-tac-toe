@@ -1,10 +1,4 @@
 function verification() {
-  var marks = 1 * (document.getElementById("marks").value);
-  ++marks;
-  if(marks == 9) {
-    return wining(marks);
-  }
-  document.getElementById("marks").value = marks;
   var firstDiagonalSum = 0;
   var secondDiagonalSum  = 0;
   for(var i = 1; i < 4; ++i) {
@@ -19,17 +13,23 @@ function verification() {
     if(verticalSum == 3 || verticalSum == -3) {
       return wining(verticalSum);
     }
-    if(horizontalSum === 3 || horizontalSum === -3) {
+    if(horizontalSum == 3 || horizontalSum == -3) {
       return wining(horizontalSum);
     }
     firstDiagonalSum += 1 * (document.getElementById(i+"_"+i).value);
     secondDiagonalSum += 1 * (document.getElementById((3 - i + 1)+"_"+i).value)
   }
-  if(firstDiagonalSum === 3 || firstDiagonalSum === -3) {
+  if(firstDiagonalSum == 3 || firstDiagonalSum == -3) {
     return wining(firstDiagonalSum);
   }
-  if(secondDiagonalSum === 3 || secondDiagonalSum === -3) {
+  if(secondDiagonalSum == 3 || secondDiagonalSum == -3) {
     return wining(secondDiagonalSum);
   }
+  var marks = 1 * (document.getElementById("marks").value);
+  ++marks;
+  if(marks == 9) {
+    return wining(marks);
+  }
+  document.getElementById("marks").value = marks;
   return false;
 }

@@ -11,24 +11,24 @@ function verification() {
       horizontalSum +=  horizontalValue;
     }
     if(verticalSum == 3 || verticalSum == -3) {
-      return wining(verticalSum);
+      return endGame(verticalSum);
     }
     if(horizontalSum == 3 || horizontalSum == -3) {
-      return wining(horizontalSum);
+      return endGame(horizontalSum);
     }
     firstDiagonalSum += 1 * (document.getElementById(i+"_"+i).value);
     secondDiagonalSum += 1 * (document.getElementById((3 - i + 1)+"_"+i).value)
   }
   if(firstDiagonalSum == 3 || firstDiagonalSum == -3) {
-    return wining(firstDiagonalSum);
+    return endGame(firstDiagonalSum);
   }
   if(secondDiagonalSum == 3 || secondDiagonalSum == -3) {
-    return wining(secondDiagonalSum);
+    return endGame(secondDiagonalSum);
   }
   var marks = 1 * (document.getElementById("marks").value);
   ++marks;
   if(marks == 9) {
-    return wining(marks);
+    return endGame(marks);
   }
   document.getElementById("marks").value = marks;
   return false;
